@@ -1,0 +1,36 @@
+[project]
+name = "pyledger"
+version = "0.1.0"
+description = "Open-source double-entry accounting engine"
+authors = [{name="JOZBERT BHOYI"}]
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.10"
+
+[project.urls]
+Homepage = "https://github.com/therealjozber/pyledger"
+Issues = "https://github.com/therealjozber/pyledgerissues"
+Documentation = "https://github.com/therealjozber/pyledger/wiki"
+
+[tool.pyright]
+include = ["pyledger"]
+
+[tool.black]
+line-length = 88
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "B"]
+
+[tool.uv.workspace]
+members = [
+    ".",
+]
+
+[tool.uv.sources]
+pyledger = { workspace = true, editable = true }
+
+[dependency-groups]
+dev = [
+    "pyledger",
+]
